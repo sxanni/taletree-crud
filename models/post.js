@@ -1,19 +1,19 @@
-// Import Mongoose
+// Require/Import Mongoose
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-// comment Schema
+// create comment Schema ( we want comments to be strings)
 const commentSchema = new Schema({
-    textContent: String,
+    textContent: String, //string type
 },{
-    timestamps: true
+    timestamps: true //with time of comment
 });
 
 // post Schema
 const postSchema = new Schema({
-    textContent: String,
-    comments: [commentSchema],
+    textContent: String, //string type
+    comments: [commentSchema], //each post contains array of ccomments
 },{
         timestamps: true
 });
