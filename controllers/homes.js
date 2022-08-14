@@ -9,7 +9,7 @@ const Post = require('../models/post')
 function index(req, res){
   Post.find({},function(err, post) { //post.find finds everything in required post file. The .find takes in the filter{} and a function. an empty bracket ->"{}" means its finding everything in Post file
       console.log("Hit function INSIDE index");
-     res.render('index', { title: 'TALETREE', posts: post, imgsrc:'./logo.png'});
+     res.render('index', { title: 'TALETREE', posts: post, imgsrc:'/logo.png'});
   } )
 }
 
