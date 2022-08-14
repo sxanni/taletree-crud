@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:darkgray;
+  width: min(100% - 2rem, 600px);
+  margin-inline: auto;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.postDiv > h4{
+  display: flex;
+
+}
+.postDiv > h4 > a{
+  padding: 10px;
+  border: 2px
+}
+
+.dropdown{
+list-style-type:circle;
+color:lightgreen;
+}

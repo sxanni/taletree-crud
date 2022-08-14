@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href="/">ICON</a>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  <a href="/explore">Explore</a>  <br><br>
+  <a href="/profile">Profile</a>  <br><br>
+
+<%= post.textContent %>
+<form  action="<%= post.id %>?_method=DELETE" method="POST">
+<button type="submit">X</button>
+</form>
+
+<form class="" action="/post/<%= post.id %>" method="POST">
+<input type="text" name="textContent" value="" placeholder="Tweet your reply">
+<button type="submit">Post</button>
+</form>
+
+<h1>Comments</h1>
+<% post.comments.forEach(function(m){ %>
+<br>
+User id - <%= m.id %>
+<br>
+<br> Said :
+<%= m.textContent %>
+<br>
+<% }) %>
+<%= post.comments.textContent %>
+  </body>
+</html>
