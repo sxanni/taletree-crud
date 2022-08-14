@@ -27,7 +27,7 @@ function addComment(req, res) {
 function show(req, res) {
   Post.findById(req.params.id,function(err, post) {
     
-  res.render('post/show', {title : "taletreedb" , post});
+  res.render('post/show', {title : "Tale Seed" , post});
 
   })
  }
