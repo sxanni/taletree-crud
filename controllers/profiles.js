@@ -1,7 +1,7 @@
 
 //Profile controller!
 function show(req, res){
-res.render('profile', { title: 'taletreedb' });
+res.render('profile', { title: 'User Profile' });
 }
 
 

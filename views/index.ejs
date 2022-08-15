@@ -2,6 +2,8 @@
 
     <h4 class=" welcome font-weight-bold mb-4">Welcome to <%= title %>, 
     </h4>
+    
+    <!-- make post input -->
     <form class="" action="/home" method="POST">
       <div class="input-group d-flex justify-content-center">
 
@@ -29,13 +31,14 @@
 
           <!-- Send a delete method as a post request then overide with delete inside of it with ?_method=DELETE -->
           <form action="<%= p.id %>?_method=DELETE" method="POST">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+            <div class="dropdown bg-dark">
+              <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 ...
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <ul class="dropdown-menu bg-success" aria-labelledby="dropdownMenuButton1">
                 <button class="dropdown-item text-danger" type="submit" name="button">Delete</button>
+                <button class="dropdown-item text-dark" type="submit" name="button" formaction="<%= p.id %>">Update</button>
               </ul>
             </div>
           </form>

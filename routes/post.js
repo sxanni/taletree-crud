@@ -6,6 +6,7 @@ let profileCtrl = require('../controllers/profiles');
 let postCtrl = require('../controllers/post');
 
 //post for post/:id
-router.post('/:id', postCtrl.addComment);
+router.post('/:id', postCtrl.addComment); //router linking comments to post page after thyve been posted
+// router.post('/:id', postCtrl.updatePost); //router linking comments to post page after thyve been posted
 
 module.exports = router;

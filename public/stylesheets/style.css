@@ -2,7 +2,7 @@ body {
   padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color:darkgray;
-  width: min(100% - 2rem, 100%);
+  width: min(100% - 2rem, 90%);
   margin-inline: auto;
 }
 
@@ -21,6 +21,7 @@ a:hover {
   color: white;
   
 }
+
 
 .postDiv > h4{
   display: flex;
@@ -43,4 +44,8 @@ color:lightgreen;
 }
 .welcome{
   font-weight: bold;
+}
+
+.avatar{
+  width:20%;
 }

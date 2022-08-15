@@ -37,6 +37,50 @@ Post.findByIdAndDelete(req.params.id , function (err, docs) {
 })
 }
 
+
+function updatePost(req, res) {
+
+  Post.findOneAndUpdate(req.params.id, {textContent:(req.body)},  function (err, post) {
+
+    post.save(function (err) {
+      console.log("saving new Post");
+
+      console.log("saved!");
+      res.redirect(`/${req.params.id}`);
+    });
+    
+    
+    // if (!result) {
+    //   res.status(404).send("data is not found");
+    // }
+    // else {
+    //     result.id = req.body.id;
+    //     result.textContent = req.body.body;
+    //     result.updateOne();
+    // }
+  
+  
+    // const updatePost = quer
+    // const post = new Post(req.body); //create new post,
+    // post.save(function (err) {
+    //   //.save is a mongoose method to save the new post
+    //   res.redirect("/home"); //as a response, redirect user to home page
+    // });
+
+    // res.redirect("/"); //after updating post it redirects user to home page, showing its been deleted
+  });
+}
+// // * update post Function
+ 
+// function updatePost(req,res){
+// Post.findOneAndUpdate(req.params.id , function (err, docs) {
+  
+
+//   res.redirect('/'); //after updating post it redirects user to home page, showing its been deleted
+
+// })
+// }
+
 /*
 * Export Modules
 */
@@ -44,4 +88,5 @@ module.exports = {
    index,
    create,
    deletePost,
+   updatePost,
  };
