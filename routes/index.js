@@ -31,7 +31,7 @@ router.get('/:id', postCtrl.show)
 router.delete('/:id', indexCtrl.deletePost)
 
 //update post
-router.post('/:id', indexCtrl.updatePost)
+// router.post('/:id', indexCtrl.updatePost)
 
 
 module.exports = router;

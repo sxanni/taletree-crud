@@ -1,48 +1,62 @@
-
-
 <%- include('../partials/header.ejs') %>
-    <!-- <a href="/">ICON</a> -->
-    <h1><%= title %></h1>
-    <p>Welcome to the <%= title %></p>
+  <!-- <a href="/">ICON</a> -->
+  <h1>
+    <%= title %>
+  </h1>
+  <p>This is the <%= title %>, the first paragraph in this tree
+  </p>
   <!-- <a href="/explore">Explore</a>  <br><br>
   <a href="/profile">Profile</a>  <br><br> -->
-<h4 class="font-weight-bold border p-2">
+  <h4 class="font-weight-bold border p-2">
 
-  <%= post.textContent %>
-</h4>
-<form  action="<%= post.id %>?_method=DELETE" method="POST">
-<button type="submit" class="bg-danger mr-5">X-Delete</button>
-</form>
-<button class="btn btn-dark my-5" onclick="updateToggle()">Update</button>
+    <%= post.textContent %>
+  </h4>
+  <form action="<%= post.id %>?_method=DELETE" method="POST">
+    <button type="submit" class="bg-danger mr-5">X-Delete</button>
+  </form>
+  <button class="btn btn-dark my-5" onclick="updateToggle()">Update</button>
 
-<!-- update form -->
-<form id="updateinput" style="display:none; " method="post" action="/home/<%= post.id %>">
-  <textarea class="updateTxt" name="textContent" type="text" value="" cols="80" rows="6" placeholder=" Update this post"><%= post.textContent %></textarea>
-  <button type="submit" class="btn btn-dark my-5">Update Post</button>
-</form>
+  <!-- update form -->
+  <form id="updateinput" style="display:none; " method="post" action="/home">
+    <textarea class="updateTxt" name="textContent" type="text" value="" cols="80" rows="6"
+      placeholder=" Update this post"><%= post.textContent %></textarea>
+    <button type="submit" class="btn btn-dark my-5">Update Post</button>
+  </form>
 
-<br>
-<hr>
-<br>
-
-<form class="" action="/post/<%= post.id %>" method="POST">
-<input type="text" name="textContent" value="" placeholder="Comment to add a branch">
-<button type="submit" class="btn btn-success py-1">Post</button>
-</form>
-
-<br>
-<h1>Comments</h1>
-<br>
-<% post.comments.forEach(function(m){ %>
-<br>
-User id - <%= m.id %>
-<br>
-<br> Said :
-<%= m.textContent %>
-<br>
-<% }) %>
-<%= post.comments.textContent %>
-  <!-- </body> -->
   <br>
-  <%- include('../partials/footer.ejs') %>
-</html>
+  <hr>
+  <br>
+
+  <form class="" action="/post/<%= post.id %>" method="POST">
+    <input type="text" name="textContent" value="" placeholder="Comment to add a branch">
+    <button type="submit" class="btn btn-success py-1">Post</button>
+  </form>
+
+  <br>
+  <h1>Comments</h1>
+  <br>
+  <% post.comments.forEach(function(m){ %>
+    
+    <div class="border p-3 my-3">
+
+      <br>
+      <h3 class="font-weight-bold">
+        User id - <%= m.id %>
+      </h3>
+      <hr>
+      <br>
+      <br>
+      <h5>
+
+        Said : <%= m.textContent %>
+      </h5>
+      <br>
+    </div>
+
+  <% }) %>
+      <%= post.comments.textContent %>
+        <!-- </body> -->
+        <br>
+        <%- include('../partials/footer.ejs') %>
+
+          </html>
